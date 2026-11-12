@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belikes — Pokémon × Dragões</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>O site mais autista que eu já fiz...eu acho</h1>
+    <p class="subtitulo">Compare Pokémon e Dragões!</p>
+    <nav class="abas">
+      <button class="aba ativa" data-aba="altura">📏 Altura</button>
+      <button class="aba" data-aba="peso">⚖️ Peso</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="seletores">
+      <div class="slot" data-slot="0">
+        <div class="tipo-toggle">
+          <button data-tipo="pokemon">Pokémon</button>
+          <button data-tipo="dragao">Dragão</button>
+        </div>
+        <div class="busca">
+          <div class="campo">
+            <input type="text" placeholder="Digite um nome..." autocomplete="off" spellcheck="false">
+            <ul class="sugestoes" hidden></ul>
+          </div>
+          <button class="aleatorio" title="Aleatório">🎲</button>
+        </div>
+        <div class="resumo"></div>
+      </div>
+
+      <div class="vs">VS</div>
+
+      <div class="slot" data-slot="1">
+        <div class="tipo-toggle">
+          <button data-tipo="pokemon">Pokémon</button>
+          <button data-tipo="dragao">Dragão</button>
+        </div>
+        <div class="busca">
+          <div class="campo">
+            <input type="text" placeholder="Digite um nome..." autocomplete="off" spellcheck="false">
+            <ul class="sugestoes" hidden></ul>
+          </div>
+          <button class="aleatorio" title="Aleatório">🎲</button>
+        </div>
+        <div class="resumo"></div>
+      </div>
+    </section>
+
+    <!-- ABA ALTURA -->
+    <section id="painel-altura" class="painel">
+      <div class="opcoes">
+        <label><input type="checkbox" id="mostrar-humano" checked> Mostrar humano de referência <small>(uma pessoa diferente cada vez que você liga)</small></label>
+      </div>
+      <div id="palco-altura" class="palco"></div>
+      <p id="frase-altura" class="frase"></p>
+    </section>
+
+    <!-- ABA PESO -->
+    <section id="painel-peso" class="painel" hidden>
+      <div id="palco-peso" class="palco palco-peso"></div>
+      <p id="frase-peso" class="frase"></p>
+      <div id="barras-peso" class="barras"></div>
+      <div id="equivalencias" class="equivalencias"></div>
+    </section>
+
+    <p class="nota">
+      Espécies de Dragões: <span id="total-dragoes"></span>
+    </p>
+  </main>
+
+  <script src="pessoas.js"></script>
+  <script src="dragoes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
